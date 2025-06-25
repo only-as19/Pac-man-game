@@ -54,3 +54,11 @@ function createBoard() {
     }
   }
 }
+
+createBoard();
+
+// Starting the position of Pacman
+
+let pacmanCurrentPosition = 490;
+
+squares[pacmanCurrentPosition].classList.add('pacman');
