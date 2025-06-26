@@ -86,3 +86,9 @@ class Ghost{
         new Ghost("inky", 351, 300),
         new Ghost("clyde", 379, 500),
 ]
+
+
+ghosts.forEach(ghost => squares[ghost.startIndex].classList.add(ghost.className))
+
+
+ghosts.forEach(ghost => moveGhost(ghost))
