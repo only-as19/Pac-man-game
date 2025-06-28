@@ -67,7 +67,15 @@ squares[pacmanCurrentPosition].classList.add('pacman');
 
 
 
-
+function pacDotEaten(){
+    if(squares[pacmanCurrentPosition].classList.contains("pac-dot")){
+        scores++
+        console.log("Asad")
+        score.innerHTML = scores;
+        squares[pacmanCurrentPosition].classList.remove('pac-dot')
+        
+    }
+}
 
 class Ghost{
     constructor(className, startIndex, speed){
