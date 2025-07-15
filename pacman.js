@@ -78,15 +78,42 @@ function control(e){
     switch(e.keyCode){
         case 40:
             console.log('Press down')
+            if(!squares[pacmanCurrentPosition + width].classList.contains('ghost-liar') &&
+                !squares[pacmanCurrentPosition + width].classList.contains('wall') &&
+                pacmanCurrentPosition + width < width * width){
+                pacmanCurrentPosition += width;
+            }
+            
             break;    
         case 38:
             console.log('Press Up')
+            if(!squares[pacmanCurrentPosition - width].classList.contains('ghost-liar') &&
+            !squares[pacmanCurrentPosition - width].classList.contains('wall') &&
+                pacmanCurrentPosition - width >= 0){
+                pacmanCurrentPosition -= width;
+            }
             break;    
         case 37:
             console.log('Press Left')
+            if(!squares[pacmanCurrentPosition -1].classList.contains('ghost-liar') &&
+                !squares[pacmanCurrentPosition - 1].classList.contains('wall') &&
+                pacmanCurrentPosition%width !== 0){
+                pacmanCurrentPosition -= 1;
+                if(pacmanCurrentPosition === 364){
+                    pacmanCurrentPosition = 391
+                }
+            }
             break;    
         case 39:
             console.log('Press Right')
+            if(!squares[pacmanCurrentPosition + 1].classList.contains('ghost-liar') &&
+                !squares[pacmanCurrentPosition + 1].classList.contains('wall') &&
+                pacmanCurrentPosition%width < width -1){
+                pacmanCurrentPosition += 1;
+                if(pacmanCurrentPosition === 391){
+                    pacmanCurrentPosition = 364
+                }
+            }
             break;    
     }
     squares[pacmanCurrentPosition].classList.add('pacman');
