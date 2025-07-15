@@ -64,7 +64,17 @@ let pacmanCurrentPosition = 490;
 squares[pacmanCurrentPosition].classList.add('pacman');
 
 
+function powerPAlletEaten(){
+    if(squares[pacmanCurrentPosition].classList.contains('power-pallet')){
+        scores +=10
 
+        score.innerHTML = scores
+
+        ghosts.forEach(ghost => ghost.isScared = true)
+
+        setTimeout(unScare,1000)
+    }
+}
 
 
 function pacDotEaten(){
