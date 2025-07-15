@@ -64,6 +64,36 @@ let pacmanCurrentPosition = 490;
 squares[pacmanCurrentPosition].classList.add('pacman');
 
 
+
+// Controls
+/*
+left-key = 37
+up-key = 38
+right-key = 39
+down-key = 40
+*/
+
+function control(e){
+    squares[pacmanCurrentPosition].classList.remove('pacman');
+    switch(e.keyCode){
+        case 40:
+            console.log('Press down')
+            break;    
+        case 38:
+            console.log('Press Up')
+            break;    
+        case 37:
+            console.log('Press Left')
+            break;    
+        case 39:
+            console.log('Press Right')
+            break;    
+    }
+    squares[pacmanCurrentPosition].classList.add('pacman');
+    pacDotEaten();
+
+}
+
 function powerPAlletEaten(){
     if(squares[pacmanCurrentPosition].classList.contains('power-pallet')){
         scores +=10
@@ -76,6 +106,9 @@ function powerPAlletEaten(){
     }
 }
 
+function unScare(){
+    ghosts.forEach(ghost =>ghost.isScared =false)
+}
 
 function pacDotEaten(){
     if(squares[pacmanCurrentPosition].classList.contains("pac-dot")){
